@@ -1,0 +1,22 @@
+{
+  "name": "youtubeclonebackend",
+  "version": "1.0.0",
+  "description": "youtube but I made it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aseichter2007/YouTubeClone.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "tony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseichter2007/YouTubeClone/issues"
+  },
+  "homepage": "https://github.com/aseichter2007/YouTubeClone#readme"
+}
