@@ -4,7 +4,8 @@
   "description": "youtube but I made it",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/aseichter2007/YouTubeClone/issues"
   },
-  "homepage": "https://github.com/aseichter2007/YouTubeClone#readme"
+  "homepage": "https://github.com/aseichter2007/YouTubeClone#readme",
+  "dependencies": {
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.12",
+    "nodemon": "^2.0.6"
+  }
 }
