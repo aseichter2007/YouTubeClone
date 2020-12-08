@@ -22,6 +22,7 @@
   "homepage": "https://github.com/aseichter2007/YouTubeClone#readme",
   "dependencies": {
     "config": "^3.3.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "joi": "^17.3.0",
     "mongoose": "^5.10.12",
