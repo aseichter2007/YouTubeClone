@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import ApiLayer from './Components/ApiLayer'
+import ApiLayer from './Components/ApiLayer.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="">
+      <header className="">
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,7 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
         <ApiLayer></ApiLayer>
       </header>
     </div>
