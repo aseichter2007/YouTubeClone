@@ -1,4 +1,5 @@
 const {SubComment, validate} = require('../models/Subcomment');
+const {Comment} = require('../models/comment');
 const express = require('express');
 const router = express.Router();
 
@@ -30,18 +31,18 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req,res) => {
     try{
         const subcomments = await SubComment.find();
-
-        var subComments = await Comment.find();
-       var comments = comments.filter(comment => {
+        console.log( req.params.id);
+        var subComments = await SubComment.find();
+       var comments = subComments.filter(comment => {
+           //console.log(comment.parent);
             if (comment.parent===req.params.id) {
                 return true;
             } else {
                 return false;
             }
         })
-
-
-        return res.send(video);
+        console.log(subComments);
+        return res.send(subComments);
 
     } catch (ex) {
         console.log(ex);

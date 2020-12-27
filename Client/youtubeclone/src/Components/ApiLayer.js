@@ -21,7 +21,8 @@ export default class ApiLayer extends Component {
             previousSearch: null,
             searchValue: null,
             newCommentTitle: null,
-            newCommentText:null,
+            newCommentText: null,
+            loadedSubcommentParents: []
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -108,7 +109,7 @@ export default class ApiLayer extends Component {
     //         this.setState({
     //             myAPIworking: false,
     //             comments: response.data
-    //         });
+    //         });          
     //         console.log(this.state.allComments);
     //     });
     // }

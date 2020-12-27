@@ -5,14 +5,18 @@ import axios from 'axios'
 export default function Comment(props){
     const [subComments, setSubComments] = React.useState(null);
     const [reply, setReply] = React.useState(null);
+    const [subCommentParents, setSubcommentParents] = React.useState([]);
     console.log("commentBeforeGet")
     console.log(subComments);
     // let fakesubcomments = [{text:"this"}, {text: "comments"}, {text:"are"}, {text:"fake"}]
-    axios.get('http://localhost:5000/api/subcomments/'+props.id).then((res)=>{
-        console.log({subcommentGet: res.data});
-        setSubComments(res.data);
+    function getSub() {
         
-    })
+        axios.get('http://localhost:5000/api/subcomments/'+props.id).then((res)=>{
+            console.log({subcommentGet: res.data});
+            setSubComments(res.data);
+            
+        })
+    }
     function handleInput(event){
 
         setReply(event.target.value)
@@ -26,14 +30,18 @@ export default function Comment(props){
         axios.post('http://localhost:5000/api/subcomments/', {parent: props.id, text: reply}).then((res)=> {console.log(res)})
         event.preventDefault();
     }
+    getSub();
     var renderSubComments =[];
-    if (subComments !==null &&subComments.length > 0) {
+    if (subComments !==null && subComments.length > 0) {
             subComments.forEach(subComment => {
-            renderSubComments.push(
-                <div>
-                    <SubComment text ={subComment.text}></SubComment>
-                </div>
-            )
+                if (props.id === subComment.parent) {
+                    
+                    renderSubComments.push(
+                        <div>
+                            <SubComment text ={subComment.text}></SubComment>
+                        </div>
+                    )
+                }
         });
         return(
             <div>
@@ -56,6 +64,7 @@ export default function Comment(props){
     } else {
         
         return(
+
             <div>
                 <div>{props.title}</div>
                 <div>{props.text}</div>
