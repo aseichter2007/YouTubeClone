@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function VideoSelection(props) {
-    console.log("VideoList");
-    console.log(props.api.youtubeCurrent.items);
+    //console.log("VideoList");
+    //console.log(props.api.youtubeCurrent.items);
     var videoList = []
     function setVideo(video){props.api.apiFunctions.setActiveVideo(video);}
     for (let index = 0; index < props.api.youtubeCurrent.items.length; index++) {

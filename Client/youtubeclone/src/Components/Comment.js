@@ -6,8 +6,8 @@ export default function Comment(props){
     const [subComments, setSubComments] = React.useState(null);
     const [reply, setReply] = React.useState(null);
     const [subCommentParents, setSubcommentParents] = React.useState([]);
-    console.log("commentBeforeGet")
-    console.log(subComments);
+    //console.log("commentBeforeGet")
+    //console.log(subComments);
     // let fakesubcomments = [{text:"this"}, {text: "comments"}, {text:"are"}, {text:"fake"}]
     function getSub() {
         
@@ -25,8 +25,8 @@ export default function Comment(props){
     }
     
     function postSubComment(event){
-        console.log(props.id);
-        console.log(reply)
+        //console.log(props.id);
+        //console.log(reply)
         axios.post('http://localhost:5000/api/subcomments/', {parent: props.id, text: reply}).then((res)=> {console.log(res)})
         event.preventDefault();
     }

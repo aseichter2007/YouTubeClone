@@ -7,7 +7,7 @@ export default function Container(props) {
     //console.log(props);
     //console.log("requestYoutube");
     //props.api.apiFunctions.getYoutube("welding metal");
-    console.log(props.api.currentComments);
+    //console.log(props.api.currentComments);
     var comments = []
     if(props.api.currentComments != null && props.api.currentComments.length > 0){
         props.api.currentComments.forEach(comment => {
