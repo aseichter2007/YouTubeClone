@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req,res) => {
     try{
-        const subcomments = await SubComment.find();
-        console.log( req.params.id);
+        //const subcomments = await SubComment.find();
+        //console.log( req.params.id);
         var subComments = await SubComment.find();
        var comments = subComments.filter(comment => {
            //console.log(comment.parent);
@@ -41,7 +41,7 @@ router.get('/:id', async (req,res) => {
                 return false;
             }
         })
-        console.log(subComments);
+        //console.log(subComments);
         return res.send(subComments);
 
     } catch (ex) {
